@@ -19,7 +19,7 @@ class Login extends CI_Controller
 		}
 		else 
 		{		
-			$this->load->view('login',$data);
+			$this->load->view('login');
 		}	
 		
 	}
