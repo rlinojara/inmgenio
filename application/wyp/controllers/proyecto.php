@@ -44,7 +44,7 @@ class Proyecto extends MY_Controller
 		$this->load->view('index',$data);
 	}
 	
-	public function ingresar_proyecto()
+	public function registrar_proyecto()
 	{
 		$data['view'] = 'proyecto/proyecto-form';
 		$this->load->view('index',$data);
