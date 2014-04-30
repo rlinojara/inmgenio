@@ -19,11 +19,6 @@ class Login extends CI_Controller
 		}
 		else 
 		{		
-		
-			$this->load->model('sucursal_model');	
-		
-			$data['sucursal'] = $this->sucursal_model->obtener_sucursal_activas();
-			
 			$this->load->view('login',$data);
 		}	
 		
@@ -36,7 +31,6 @@ class Login extends CI_Controller
 	public function set_acceder_usuario()
 	{
 		$this->load->model('usuario_model');
-		$this->load->model('sucursal_model');
 				
 		$password = $this->input->post('password');
 		$usuario = addslashes($this->input->post('usuario'));
@@ -48,18 +42,11 @@ class Login extends CI_Controller
 		if( is_array($result) && count($result) == 1 )
 		{
 			$_SESSION['usuario'] = $result[0];
-			
-			$parametros = array($this->input->post('sucursal'));
-			
-			$_SESSION['usuario']['sucursal'] = $this->sucursal_model->
-											   obtener_sucursal_por_id($parametros);
 						
 			redirect('inicio');
 		}
 		else 
 		{
-			$data['sucursal'] = $this->sucursal_model->obtener_sucursal_activas();
-			
 			$data['error'] = array('descripcion'=>'Usuario y/o Contrase&ntilde;a Inv&aacute;lida');
 
 			$this->load->view('login.php',$data);

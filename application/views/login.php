@@ -39,16 +39,7 @@ header('Expires: 0'); // Proxies.
                     </div>          
                     <div class="form-group">
                         <label>Local</label>
-                        <select name="sucursal" class="form-control">
-                        <?php for( $i = 0 ; $i < count($sucursal) ; $i++):?>
-                        
-                            <option value="<?php echo $sucursal[$i]['id_sucursal']?>">
-                            
-                            	<?php echo $sucursal[$i]['nombre']?>
-                            	
-                            </option>
-                            
-                        <?php endfor;?>    
+                        <select name="sucursal" class="form-control"> 
                         </select>
                     </div>
                 </div>

@@ -3,16 +3,37 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generaci√≥n: 29-04-2014 a las 00:01:33
--- Versi√≥n del servidor: 5.5.33
--- Versi√≥n de PHP: 5.5.3
+-- Tiempo de generación: 30-04-2014 a las 18:01:34
+-- Versión del servidor: 5.5.33
+-- Versión de PHP: 5.5.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Base de datos: `tier_ebenezer`
+-- Base de datos: `inmgenio`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proyecto`
+--
+
+CREATE TABLE `proyecto` (
+  `id_proyecto` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(150) NOT NULL,
+  `estado` int(11) NOT NULL,
+  `img_principal` varchar(20) NOT NULL,
+  `descripcion` text NOT NULL,
+  `img_logo` varchar(20) NOT NULL,
+  `direccion` text NOT NULL,
+  `email_contacto` varchar(30) NOT NULL,
+  `ubicacion_latitud` varchar(50) NOT NULL,
+  `ubicacion_longitud` varchar(50) NOT NULL,
+  `telefono_contacto` varchar(250) NOT NULL,
+  PRIMARY KEY (`id_proyecto`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -30,28 +51,6 @@ CREATE TABLE `rol` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `sucursal`
---
-
-CREATE TABLE `sucursal` (
-  `id_sucursal` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(50) NOT NULL,
-  `estado` tinyint(4) NOT NULL,
-  PRIMARY KEY (`id_sucursal`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
-
---
--- Volcado de datos para la tabla `sucursal`
---
-
-INSERT INTO `sucursal` (`id_sucursal`, `nombre`, `estado`) VALUES
-(3, 'tienda1', 1),
-(4, 'tienda2', 1),
-(5, 'almacen', 1);
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `usuario`
 --
 
@@ -64,14 +63,14 @@ CREATE TABLE `usuario` (
   `password` varchar(50) NOT NULL,
   `estado` smallint(4) NOT NULL DEFAULT '1' COMMENT '1 activo, 2 desactivado',
   PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `email`, `usuario`, `password`, `estado`) VALUES
-(1, 'super', 'admin', 'admin@admin.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1);
+(1, 'NOMBRE3', 'ADMIN', 'superarchi@admin.com', 'admin', '67f43efc5701784db1504e4993d7e393', 1);
 
 -- --------------------------------------------------------
 
