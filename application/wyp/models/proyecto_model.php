@@ -1,9 +1,9 @@
 <?php
 class Proyecto_model extends CI_Model
 {
-	public function cantidad_total_usuarios()
+	public function cantidad_total_proyectos()
 	{
-		$sql = 'SELECT COUNT(*) as total FROM usuario';
+		$sql = 'SELECT COUNT(*) as total FROM proyectos WHERE estado = 1';
 		
 		$query = $this->db->query($sql);
 		
@@ -18,7 +18,7 @@ class Proyecto_model extends CI_Model
 	 * @param por_pagina
 	 * @param pagina
 	 */
-	public function paginacion_usuario($arg0)
+	public function paginacion_proyecto($arg0)
 	{
 		$sql = 'SELECT
 					id_proyecto,
@@ -26,7 +26,8 @@ class Proyecto_model extends CI_Model
 					descripcion,
 					estado,
 					email_contacto  
-				FROM proyecto LIMIT ?,?';
+				FROM proyecto 
+				WHERE estado = 1 LIMIT ?,?';
 		
 		$query = $this->db->query($sql,$arg0);
 		

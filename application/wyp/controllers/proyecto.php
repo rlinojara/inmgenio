@@ -7,7 +7,7 @@ class Proyecto extends MY_Controller
 		$this->load->model('proyecto_model');
 		
 		$config['base_url'] = site_url('proyecto/listar_proyecto/');
-		$config['total_rows'] = $this->proyecto_model->cantidad_total_usuarios();
+		$config['total_rows'] = $this->proyecto_model->cantidad_total_proyectos();
 		$config['per_page'] = 1;
 	
 		
@@ -33,7 +33,7 @@ class Proyecto extends MY_Controller
 						   );
 		
 		$data['proyectos'] = $this->proyecto_model->
-								    paginacion_usuario($parametros);
+								    paginacion_proyecto($parametros);
 		
 		$data['paginacion'] =  $this->pagination->create_links();
 		
