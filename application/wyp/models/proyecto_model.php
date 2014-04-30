@@ -20,7 +20,13 @@ class Proyecto_model extends CI_Model
 	 */
 	public function paginacion_usuario($arg0)
 	{
-		$sql = 'SELECT * FROM usuario LIMIT ?,?';
+		$sql = 'SELECT
+					id_proyecto,
+					nombre,
+					descripcion,
+					estado,
+					email_contacto  
+				FROM usuario LIMIT ?,?';
 		
 		$query = $this->db->query($sql,$arg0);
 		

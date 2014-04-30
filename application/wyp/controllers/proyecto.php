@@ -4,10 +4,10 @@ class Proyecto extends MY_Controller
 	public function listar_proyecto()
 	{		
 		$this->load->library('pagination');
-		$this->load->model('usuario_model');
+		$this->load->model('proyecto_model');
 		
 		$config['base_url'] = site_url('proyecto/listar_proyecto/');
-		$config['total_rows'] = $this->usuario_model->cantidad_total_usuarios();
+		$config['total_rows'] = $this->proyecto_model->cantidad_total_usuarios();
 		$config['per_page'] = 1;
 	
 		
@@ -32,8 +32,8 @@ class Proyecto extends MY_Controller
 							 intval($config['per_page'])
 						   );
 		
-		$data['proyectos'] = $this->usuario_model->
-								  paginacion_usuario($parametros);
+		$data['proyectos'] = $this->proyecto_model->
+								    paginacion_usuario($parametros);
 		
 		$data['paginacion'] =  $this->pagination->create_links();
 		
