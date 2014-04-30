@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Tier Ebenezer</title>
+        <title>Inmgenio</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -82,6 +82,9 @@
                         </li>
                         <li>
                             <?php echo anchor('usuario/listar_usuario','<i class="fa fa-th"></i> <span>Usuario</span>'); ?>
+                        </li>
+                        <li>
+                            <?php echo anchor('proyecto/listar_proyecto','<i class="fa fa-th"></i> <span>Proyecto</span>'); ?>
                         </li>
                     </ul>
                 </section>
