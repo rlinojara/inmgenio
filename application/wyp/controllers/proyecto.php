@@ -1,5 +1,5 @@
 <?php
-class Proyecto extends CI_Controller
+class Proyecto extends MY_Controller
 {
 	public function listar_proyecto()
 	{		
