@@ -39,7 +39,7 @@ class Proyecto extends MY_Controller
 		
 		$data['pagina'] = $this->uri->segment(3,'');
 		
-		$data['view'] = 'usuario/usuario-list';
+		$data['view'] = 'proyecto/proyecto-list';
 		
 		$this->load->view('index',$data);
 	}
