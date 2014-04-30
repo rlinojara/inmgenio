@@ -72,7 +72,7 @@ if (defined('ENVIRONMENT'))
  * NO TRAILING SLASH!
  *
  */
-	$application_folder = 'application/web';
+	$application_folder = 'application/wyp';
 
 /*
  * --------------------------------------------------------------------

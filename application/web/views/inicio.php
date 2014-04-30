@@ -10,7 +10,7 @@
     <section class="content">
         <div class="row">
         
-        	<?php print_r($_SESSION['usuario'])?>
+        	<h1>WEB</h1>
             
         </div>
     </section>
