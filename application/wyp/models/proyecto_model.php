@@ -26,7 +26,7 @@ class Proyecto_model extends CI_Model
 					descripcion,
 					estado,
 					email_contacto  
-				FROM usuario LIMIT ?,?';
+				FROM proyecto LIMIT ?,?';
 		
 		$query = $this->db->query($sql,$arg0);
 		
