@@ -46,14 +46,37 @@ class Proyecto extends MY_Controller
 	
 	public function registrar_proyecto()
 	{
+		$data['url_form'] = 'proyecto/set_registrar_proyecto';
+		$data['titulo'] = 'Registro';
 		$data['view'] = 'proyecto/proyecto-form';
 		$this->load->view('index',$data);
 	}
 	
 	public function editar_proyecto()
 	{
+		$this->load->model('proyecto_model');
+		
 		$data['view'] = 'proyecto/proyecto-form';
-		$this->load->view('index',$data);
+		
+		if( $this->uri->segment(3,0) > 0 )
+		{
+			$parametro = array($this->uri->segment(3,0));
+				
+			$data['proyecto'] = $this->proyecto_model->obtener_proyecto_por_id($parametro);
+				
+			$data['id'] = $this->uri->segment(3,0);
+				
+			$data['url_form'] = 'proyecto/set_editar_proyecto';
+				
+			$data['titulo'] = 'Edici&oacute;n';
+				
+			$this->load->view('index',$data);
+		}
+		else
+		{
+			redirect('proyecto/registrar_proyecto');
+		}
+
 	}
 	
 	public function deshabilitar_proyecto()
