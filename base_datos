@@ -1,0 +1,87 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.6
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tiempo de generación: 29-04-2014 a las 00:01:33
+-- Versión del servidor: 5.5.33
+-- Versión de PHP: 5.5.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de datos: `tier_ebenezer`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rol`
+--
+
+CREATE TABLE `rol` (
+  `id_rol` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) NOT NULL,
+  `estado` tinyint(1) NOT NULL COMMENT '1 activo, 2 inactivo',
+  PRIMARY KEY (`id_rol`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sucursal`
+--
+
+CREATE TABLE `sucursal` (
+  `id_sucursal` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) NOT NULL,
+  `estado` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id_sucursal`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Volcado de datos para la tabla `sucursal`
+--
+
+INSERT INTO `sucursal` (`id_sucursal`, `nombre`, `estado`) VALUES
+(3, 'tienda1', 1),
+(4, 'tienda2', 1),
+(5, 'almacen', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) NOT NULL,
+  `apellido` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `usuario` varchar(15) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `estado` smallint(4) NOT NULL DEFAULT '1' COMMENT '1 activo, 2 desactivado',
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `email`, `usuario`, `password`, `estado`) VALUES
+(1, 'super', 'admin', 'admin@admin.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario_rol`
+--
+
+CREATE TABLE `usuario_rol` (
+  `id_usuario_rol` int(11) NOT NULL AUTO_INCREMENT,
+  `id_usuario` int(11) NOT NULL,
+  `id_rol` int(11) NOT NULL,
+  PRIMARY KEY (`id_usuario_rol`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
