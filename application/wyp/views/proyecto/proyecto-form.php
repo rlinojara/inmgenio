@@ -58,47 +58,48 @@ if(isset($proceso_form) and $proceso_form === FALSE){
 	                        <div class="form-group">
 	                            <label for="exampleInputEmail1">Nombre:</label>
 	                            <input type="text" name="nombre" 
-	                            	   class="form-control" id="exampleInputEmail1" 
-	                            	   value="<?php if(isset($usuario['nombre'])) echo $usuario['nombre']?>" placeholder="">
+	                            	   class="form-control" id="nombre" 
+	                            	   value="<?php if(isset($proyecto['nombre'])) echo $proyecto['nombre']?>" placeholder="">
 	                        </div>
 	                        <div class="form-group">
-	                            <label for="exampleInputEmail1">Apellidos:</label>
-	                            <input type="text" name="apellido" 
-	                            	   class="form-control" id="exampleInputEmail1" 
-	                            	   value="<?php if(isset($usuario['apellido'])) echo $usuario['apellido']?>" placeholder="">
+	                            <label for="exampleInputEmail1">Estado:</label>
+	                            <input type="text" name="estado" 
+	                            	   class="form-control" id="estado" 
+	                            	   value="<?php if(isset($proyecto['nombre'])) echo $proyecto['nombre']?>" placeholder="">
+	                        </div>
+							<div class="form-group">
+                                <label for="txtImagenPrincipal">Imagen principal</label>
+                                <input type="file" id="txtImagenPrincipal">
+                                <p class="help-block">Example block-level help text here.</p>
+                            </div>
+	                        <div class="form-group">
+	                            <label for="exampleInputEmail1">Descripción:</label>
+	                            <input type="text" name="descripcion" 
+	                            	   class="form-control" id="descripcion" 
+	                            	   value="<?php if(isset($proyecto['descripcion'])) echo $proyecto['descripcion']?>" placeholder="">
+	                        </div>
+							<div class="form-group">
+                                <label for="txtLogo">Logo</label>
+                                <input type="file" id="txtLogo">
+                                <p class="help-block">Example block-level help text here.</p>
+                            </div>
+	                        <div class="form-group">
+	                            <label for="exampleInputEmail1">Dirección:</label>
+	                            <input type="text" name="direccion" 
+	                            	   class="form-control" id="direccion" 
+	                            	   value="<?php if(isset($proyecto['nombre'])) echo $proyecto['nombre']?>" placeholder="">
 	                        </div>
 	                        <div class="form-group">
 	                            <label for="exampleInputEmail1">Correo electr&oacute;niico:</label>
 	                            <input type="text" name="email" class="form-control" 
-	                            id="exampleInputEmail1" 
-	                            value="<?php if(isset($usuario['email'])) echo $usuario['email']?>" placeholder="">
-	                        </div>
-	                        
-	          
-	                        <?php if(!isset($id)):?>
-	                        
-	                        <div class="form-group">
-	                            <label for="exampleInputEmail1">Usuario:</label>
-	                            <input type="text" name="usuario" class="form-control" id="exampleInputEmail1" placeholder="">
-	                        </div>
-	                        <?php else:?>
-	                        
-	                        <input type="hidden" 
-	                        	   name="id_usuario" value="<?php echo $id?>">
-	                        
-	                        <?php endif;?>
-	                        
-	                        <div class="form-group">
-	                            <label for="exampleInputPassword1">Contrase&ntilde;a</label>
-	                            <input type="password" name="password" 
-	                            	   class="form-control" id="exampleInputPassword1" 
-	                            	   value="<?php if(isset($usuario['password'])) echo $usuario['password']?>" placeholder="">
+	                            id="email" 
+	                            value="<?php if(isset($proyecto['email'])) echo $proyecto['email']?>" placeholder="">
 	                        </div>
 	                        <div class="form-group">
-	                            <label for="exampleInputPassword1">Confirmar contrase&ntilde;a</label>
-	                            <input type="password" name="confirm_password" 
-	                            class="form-control" id="exampleInputPassword1" 
-	                            value="<?php if(isset($usuario['password'])) echo $usuario['password']?>" placeholder="">
+	                            <label for="exampleInputEmail1">Teléfono:</label>
+	                            <input type="text" name="telefono" 
+	                            	   class="form-control" id="telefono" 
+	                            	   value="<?php if(isset($proyecto['telefono'])) echo $proyecto['telefono']?>" placeholder="">
 	                        </div>
 	                    </div><!-- /.box-body -->
 
