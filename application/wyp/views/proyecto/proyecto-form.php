@@ -2,7 +2,7 @@
     <section class="content-header">
     
         <h1>
-            <?php echo $titulo?> de usuario
+            <?php echo $titulo?> de Proyecto
             <small>Control panel</small>
         </h1>
         <ol class="breadcrumb">
@@ -61,19 +61,13 @@ if(isset($proceso_form) and $proceso_form === FALSE){
 	                            	   class="form-control" id="nombre" 
 	                            	   value="<?php if(isset($proyecto['nombre'])) echo $proyecto['nombre']?>" placeholder="">
 	                        </div>
-	                        <div class="form-group">
-	                            <label for="exampleInputEmail1">Estado:</label>
-	                            <input type="text" name="estado" 
-	                            	   class="form-control" id="estado" 
-	                            	   value="<?php if(isset($proyecto['nombre'])) echo $proyecto['nombre']?>" placeholder="">
-	                        </div>
 							<div class="form-group">
                                 <label for="txtImagenPrincipal">Imagen principal</label>
                                 <input type="file" id="txtImagenPrincipal">
                                 <p class="help-block">Example block-level help text here.</p>
                             </div>
 	                        <div class="form-group">
-	                            <label for="exampleInputEmail1">Descripción:</label>
+	                            <label for="exampleInputEmail1">Descripci&oacute;n:</label>
 	                            <input type="text" name="descripcion" 
 	                            	   class="form-control" id="descripcion" 
 	                            	   value="<?php if(isset($proyecto['descripcion'])) echo $proyecto['descripcion']?>" placeholder="">
@@ -84,19 +78,19 @@ if(isset($proceso_form) and $proceso_form === FALSE){
                                 <p class="help-block">Example block-level help text here.</p>
                             </div>
 	                        <div class="form-group">
-	                            <label for="exampleInputEmail1">Dirección:</label>
+	                            <label for="exampleInputEmail1">Direcci&oacute;n:</label>
 	                            <input type="text" name="direccion" 
 	                            	   class="form-control" id="direccion" 
-	                            	   value="<?php if(isset($proyecto['nombre'])) echo $proyecto['nombre']?>" placeholder="">
+	                            	   value="<?php if(isset($proyecto['direccion'])) echo $proyecto['direccion']?>" placeholder="">
 	                        </div>
 	                        <div class="form-group">
-	                            <label for="exampleInputEmail1">Correo electr&oacute;niico:</label>
+	                            <label for="exampleInputEmail1">Correo electr&oacute;nico:</label>
 	                            <input type="text" name="email" class="form-control" 
 	                            id="email" 
 	                            value="<?php if(isset($proyecto['email'])) echo $proyecto['email']?>" placeholder="">
 	                        </div>
 	                        <div class="form-group">
-	                            <label for="exampleInputEmail1">Teléfono:</label>
+	                            <label for="exampleInputEmail1">Tel&eacute;fono:</label>
 	                            <input type="text" name="telefono" 
 	                            	   class="form-control" id="telefono" 
 	                            	   value="<?php if(isset($proyecto['telefono'])) echo $proyecto['telefono']?>" placeholder="">

@@ -3,7 +3,7 @@ class Proyecto_model extends CI_Model
 {
 	public function cantidad_total_proyectos()
 	{
-		$sql = 'SELECT COUNT(*) as total FROM proyectos WHERE estado = 1';
+		$sql = 'SELECT COUNT(*) as total FROM proyecto WHERE estado = 1';
 		
 		$query = $this->db->query($sql);
 		
@@ -66,4 +66,37 @@ class Proyecto_model extends CI_Model
 			return array();
 		}
 	}
+	
+	/**
+	 * @param usuario
+	 */
+	public function validar_proyecto($arg0)
+	{
+		$sql = 'SELECT count(*) as cantidad FROM proyecto 
+				WHERE nombre = ?';
+	
+		$query = $this->db->query($sql,$arg0);
+
+		$result = $query->result_array();
+		 
+		if ( $result[0]['cantidad'] == 0 )
+		{
+			return false;
+		}
+		else 
+		{
+			return true;
+		}	
+	}
+	
+	
+	public function registrar($arg0)
+	{
+		$sql = 'INSERT INTO proyecto
+				(nombre,descripcion,direccion,email,telefono) VALUES
+				VALUES(?,?,?,?,?)';
+		
+		$this->db->query($sql,$arg0);
+	}
+
 }

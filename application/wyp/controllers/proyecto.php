@@ -52,6 +52,58 @@ class Proyecto extends MY_Controller
 		$this->load->view('index',$data);
 	}
 	
+	public function set_registrar_proyecto()
+	{
+		if ( $this->agent->is_referral() )
+		{
+			$this->load->model('proyecto_model');
+		
+			$nombre = trim(strtoupper($this->input->post('nombre')));
+			$img_principal = '';
+			$descripcion = trim(strtoupper($this->input->post('descripcion')));
+			$img_logo = '';
+			$direccion = trim(strtoupper($this->input->post('direccion')));
+			$email = trim(strtolower($this->input->post('email')));
+			$telefono = trim(strtolower($this->input->post('telefono')));
+
+			$data = array();
+			
+			/**
+			 * @see Validacion de usuario
+			 */
+			$parametro = array($nombre);
+			
+			if( $this->proyecto_model->validar_proyecto($parametro) )
+			{
+				$data['error'] = 'Proyecto ya se encuentra registrado';
+				$data['proceso_form'] = false;
+			}
+			else
+			{
+				/**
+				 * Registrando usuario
+				 */
+				$parametros = array($nombre,$descripcion,$direccion,$email,$telefono);
+				$this->proyecto_model->registrar($parametros);
+				$data['proceso_form'] = true;
+			}
+			
+			
+			/**
+			 * @see Parametros para la vista
+			 */
+			$data['view'] = 'proyecto/proyecto-form';
+			$data['titulo'] = 'Registro';
+			$data['url_form'] = 'proyecto/set_registrar_proyecto';
+		
+			$this->load->view('index',$data);
+		}
+		else
+		{
+			redirect('proyecto/registrar_proyecto');
+		}
+	}
+	
 	public function editar_proyecto()
 	{
 		$this->load->model('proyecto_model');
@@ -78,6 +130,8 @@ class Proyecto extends MY_Controller
 		}
 
 	}
+	
+	
 	
 	public function deshabilitar_proyecto()
 	{
