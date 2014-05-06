@@ -1,4 +1,4 @@
-$('#btnUsuarioRegistro').on('click',enviarFormularioUsuario);
+/*$('#btnUsuarioRegistro').on('click',enviarFormularioUsuario);
 
 function enviarFormularioUsuario(){
 
@@ -90,4 +90,4 @@ function enviarFormularioUsuario(){
 function ValidaMail(mail) {
 	var er = /^[0-9a-z_\-\.]+@([a-z0-9\-]+\.?)*[a-z0-9]+\.([a-z]{2,4}|travel)$/i;
 	return er.test(mail);
-}
+}*/
