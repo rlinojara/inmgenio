@@ -93,8 +93,65 @@ class Proyecto_model extends CI_Model
 	public function registrar($arg0)
 	{
 		$sql = 'INSERT INTO proyecto
-				(nombre,descripcion,direccion,email,telefono) VALUES
-				VALUES(?,?,?,?,?)';
+				(nombre,descripcion,direccion,email_contacto,telefono_contacto,estado) VALUES
+				(?,?,?,?,?,1)';
+		
+		$this->db->query($sql,$arg0);
+		
+		return $this->db->insert_id();
+	}
+	
+	public function editar($arg0)
+	{
+		$sql = 'UPDATE proyecto
+				SET nombre = ?,
+					descripcion = ?,
+					direccion = ?,
+					email_contacto = ?,
+					telefono_contacto = ?
+				WHERE id_proyecto = ?';
+		
+		$this->db->query($sql,$arg0);
+	}
+	
+	public function deshabilitar($arg0)
+	{
+		$sql = 'UPDATE proyecto
+				SET estado = 2
+				WHERE id_proyecto = ?';
+	
+		$this->db->query($sql,$arg0);
+	}
+	
+	public function habilitar($arg0)
+	{
+		$sql = 'UPDATE proyecto
+				SET estado = 1
+				WHERE id_proyecto = ?';
+	
+		$this->db->query($sql,$arg0);
+	}
+	
+	/**
+	 * @param id_proyecto
+	 */
+	public function actualizar_img_principal($arg0)
+	{
+		$sql = 'UPDATE proyecto
+				SET img_principal = ?
+				WHERE id_proyecto = ?';
+		
+		$this->db->query($sql,$arg0);
+	}
+	
+	/**
+	 * @param id_proyecto
+	 */
+	public function actualizar_img_logo($arg0)
+	{
+		$sql = 'UPDATE proyecto
+				SET img_logo = ?
+				WHERE id_proyecto = ?';
 		
 		$this->db->query($sql,$arg0);
 	}

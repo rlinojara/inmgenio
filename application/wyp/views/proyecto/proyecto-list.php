@@ -43,10 +43,10 @@
                                         endif;
                                     ?>
                                 </td>
-                                <td><?php echo $proyectos[$i]['correo']?></td>
+                                <td><?php echo $proyectos[$i]['email_contacto']?></td>
                                 <td>
                                     <?php 
-                                    echo anchor('proyecto/registrar_proyecto/'.$proyectos[$i]['id_proyecto'],'Editar','class="btn btn-info btn-sm"');
+                                    echo anchor('proyecto/editar_proyecto/'.$proyectos[$i]['id_proyecto'],'Editar','class="btn btn-info btn-sm"');
                                     if($proyectos[$i]['estado'] == 1):
                                         echo anchor('proyecto/deshabilitar_proyecto/'.$proyectos[$i]['id_proyecto'].'/'.$pagina,'Deshabilitar','class="btn btn-danger btn-sm"'); 
                                     else:
